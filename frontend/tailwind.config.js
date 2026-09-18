@@ -9,8 +9,8 @@ export default {
     extend: {
       colors: {
         brand: '#00FFB3',      // Verde Claro/Menta
-        brandDark: '#00B37E',  // Verde Escuro
-        darkBg: '#002417',     // Fundo Dark
+        brandDark: '#00CF91',  // Verde Escuro
+        darkBg: '#00140C',     // Fundo Dark
         lightBg: '#E6E6E6',    // Fundo Light
       },
       keyframes: {

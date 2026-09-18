@@ -33,14 +33,14 @@ export default function Hero() {
     <section className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center pt-20 pb-16 px-4 text-center">
       
       {/* Badge Superior */}
-      <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/30 bg-brand/5 text-brand text-sm font-medium mb-6">
+      <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-brandDark/30 bg-white dark:bg-[#0a3124] text-brandDark dark:text-brand text-sm font-medium mb-6">
         <ShieldCheck className="w-4 h-4" />
         <span>Verificação instantânea de e-mails</span>
       </div>
 
       {/* Títulos */}
       <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
-        Verificador de email <span className="text-brand italic">gratuito</span>
+        Verificador de email <span className="text-brandDark italic dark:text-brand">gratuito</span>
       </h1>
       <p className="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mb-12">
         Confirme em segundos se um endereço de e-mail é válido, existe de fato e está pronto para receber mensagens — sem criar conta e sem pagar nada.
@@ -62,7 +62,7 @@ export default function Hero() {
               placeholder="nome@exemplo.com"
               className={`w-full bg-white dark:bg-[#0a3124] border text-slate-900 dark:text-white rounded-lg py-4 pl-5 pr-28 focus:outline-none focus:ring-2 transition-all shadow-sm
                 ${status === 'invalid' ? 'border-red-500 focus:ring-red-500/20' : ''}
-                ${status === 'valid' ? 'border-brand focus:ring-brand/20' : ''}
+                ${status === 'valid' ? 'border-brandDark focus:ring-brandDark/20' : ''}
                 ${status === 'idle' ? 'border-gray-300 dark:border-gray-700 focus:border-brand focus:ring-brand/20' : ''}
               `}
             />
@@ -81,7 +81,7 @@ export default function Hero() {
           {/* Botão Verificar */}
           <button
             type="submit"
-            className="bg-brand text-darkBg font-bold px-8 py-4 rounded-lg hover:bg-[#00e6a1] hover:-translate-y-0.5 transition-all shadow-[0_0_15px_rgba(0,255,179,0.2)] disabled:opacity-70 disabled:hover:translate-y-0 shrink-0"
+            className="bg-brandDark dark:bg-brand text-darkBg font-bold px-8 py-4 rounded-lg hover:bg-[#00e6a1] hover:-translate-y-0.5 transition-all shadow-[0_0_15px_rgba(0,255,179,0.2)] disabled:opacity-70 disabled:hover:translate-y-0 shrink-0"
           >
             Verificar
           </button>
