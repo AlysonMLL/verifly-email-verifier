@@ -1,0 +1,7 @@
+# Lista de domínios temporários conhecidos
+mailinator.com
+tempmail.com
+guerrillamail.com
+10minutemail.com
+yopmail.com
+dropmail.me
