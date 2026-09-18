@@ -1,24 +1,35 @@
 import ThemeToggle from './ThemeToggle';
-import { CheckCircle } from 'lucide-react';
+import logo from '../assets/logo-verifly.png';
 
 export default function Header() {
-  return (
-    <header className="w-full py-6 px-4 md:px-8 flex justify-between items-center max-w-7xl mx-auto">
-      <div className="flex items-center gap-3">
-        {/* Logo Icon */}
-        <div className="bg-brand p-2 rounded-xl text-darkBg shadow-[0_0_15px_rgba(0,255,179,0.3)]">
-          <CheckCircle className="w-6 h-6" strokeWidth={2.5} />
-        </div>
-        
-        {/* Nome do Site */}
-        <span className="font-bold text-2xl tracking-tight text-slate-900 dark:text-white">
-          Veri<span className="text-brand">fly</span>
-        </span>
-      </div>
+  const links = [
+    { name: 'Início', href: '#hero' },
+    { name: 'Compatibilidade', href: '#compatibilidade' },
+    { name: 'Recursos', href: '#recursos' },
+    { name: 'Dúvidas', href: '#faq' }
+  ];
 
-      {/* Botão de Tema */}
-      <div className="flex items-center">
-        <ThemeToggle />
+  return (
+    <header className="fixed inset-x-0 top-0 z-40 w-full h-30 border-b border-slate-200/70 bg-slate-50/85 backdrop-blur-md dark:border-white/5 dark:bg-darkBg/80 transition-colors">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-12 py-4 md:px-8">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Logo" className="h-16 w-auto transition-all" />
+        </div>
+
+        <div className="flex items-center gap-6 mt-2">
+          <nav className="hidden gap-6 text-sm font-bold uppercase tracking-wide md:flex">
+            {links.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                className="text-slate-500 transition-colors hover:text-brandDark dark:text-gray-400 dark:hover:text-brand"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

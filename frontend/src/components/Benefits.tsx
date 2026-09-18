@@ -8,8 +8,11 @@ retrabalho e protege a reputação de disparos, focando na "dor" do usuário.
 */
 
 import { Check } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Benefits() {
+  const { ref, isVisible } = useScrollReveal();
+
   const points = [
     'Reduz taxas de rejeição (bounce) em disparos e campanhas de e-mail marketing',
     'Evita perder contatos, orçamentos e cadastros por causa de digitação errada',
@@ -17,7 +20,10 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="w-full py-10 px-4 md:px-8 max-w-4xl mx-auto">
+    <section
+      ref={ref}
+      className={`w-full py-10 px-4 md:px-8 max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+    >
       <div className="bg-white dark:bg-[#0a3124] border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-sm">
         
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6">

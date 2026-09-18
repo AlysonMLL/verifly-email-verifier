@@ -7,3 +7,5 @@
     @apply bg-lightBg text-slate-900 dark:bg-darkBg dark:text-white antialiased transition-colors duration-300;
   }
 }
+
+html { scroll-behavior: smooth; }

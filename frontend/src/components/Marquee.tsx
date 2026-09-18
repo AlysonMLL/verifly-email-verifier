@@ -10,15 +10,20 @@ indicando ao usuário final que o Verifly suporta desde os provedores de e-mail 
 até domínios governamentais e educacionais restritos.
 */
 
-import { Mail, Cloud, Shield, Globe, Briefcase, GraduationCap, Building2, Server } from 'lucide-react';
+import { Mail, Globe, Briefcase, GraduationCap, Building2, Server } from 'lucide-react';
+import { siIcloud, siProtonmail, siZoho } from 'simple-icons';
+import outlookIcon from '../assets/marquee-outlook.svg';
+import yahooIcon from '../assets/marquee-yahoo.svg';
+import gmailIcon from '../assets/marquee-gmail.svg'
+
 
 const providers = [
-  { name: 'Gmail', color: 'text-red-500', bg: 'bg-red-500/10' },
-  { name: 'Outlook / Hotmail', color: 'text-blue-600', bg: 'bg-blue-600/10' },
-  { name: 'Yahoo', color: 'text-purple-600', bg: 'bg-purple-600/10' },
-  { name: 'Proton Mail', color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
-  { name: 'iCloud', color: 'text-sky-500', bg: 'bg-sky-500/10' },
-  { name: 'Zoho Mail', color: 'text-green-600', bg: 'bg-green-600/10' },
+  { name: 'Gmail', icon: gmailIcon, color: 'text-red-500', bg: 'bg-red-500/10' },
+  { name: 'Outlook', icon: outlookIcon, color: 'text-blue-600', bg: 'bg-blue-600/10' },
+  { name: 'Yahoo', icon: yahooIcon, color: 'text-purple-600', bg: 'bg-purple-600/10' },
+  { name: 'Proton Mail', icon: siProtonmail, color: 'text-indigo-500', bg: 'bg-indigo-500/10' },
+  { name: 'iCloud', icon: siIcloud, color: 'text-sky-500', bg: 'bg-sky-500/10' },
+  { name: 'Zoho Mail', icon: siZoho, color: 'text-green-600', bg: 'bg-green-600/10' },
 ];
 
 const domains = [
@@ -30,9 +35,21 @@ const domains = [
 ];
 
 export default function Marquee() {
-  // Duplicamos as arrays para garantir que o efeito infinito não tenha espaços vazios no final da tela
-  const duplicatedProviders = [...providers, ...providers];
-  const duplicatedDomains = [...domains, ...domains];
+  const renderProviderIcon = (provider: (typeof providers)[number]) => {
+    if (typeof provider.icon === 'string') {
+      return <img src={provider.icon} alt={provider.name} className="w-5 h-5 object-contain" />;
+    }
+
+    if (provider.icon && 'path' in provider.icon) {
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d={provider.icon.path} fill="currentColor" />
+        </svg>
+      );
+    }
+
+    return <Mail className="w-5 h-5" />;
+  };
 
   return (
     <section className="w-full py-16 overflow-hidden bg-transparent border-t border-gray-200 dark:border-white/5">
@@ -47,41 +64,47 @@ export default function Marquee() {
         <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-lightBg dark:from-darkBg to-transparent z-10 pointer-events-none"></div>
 
         {/* Faixa 1: Provedores (Marquee Fast) */}
-        <div className="flex w-max animate-marquee-fast hover:[animation-play-state:paused] items-center gap-4 px-4">
-          {duplicatedProviders.map((provider, idx) => (
-            <div 
-              key={`prov-${idx}`} 
-              className="flex items-center gap-3 px-6 py-4 bg-white dark:bg-[#0a3124] border border-gray-200 dark:border-white/10 rounded-full shadow-sm whitespace-nowrap transition-colors hover:border-gray-300 dark:hover:border-white/20"
-            >
-              <div className={`p-2 rounded-full ${provider.bg} ${provider.color}`}>
-                {provider.name === 'iCloud' ? <Cloud className="w-5 h-5" /> : 
-                 provider.name === 'Proton Mail' ? <Shield className="w-5 h-5" /> : 
-                 <Mail className="w-5 h-5" />}
-              </div>
-              <span className="font-bold text-slate-700 dark:text-gray-200">{provider.name}</span>
+        <div className="flex w-max animate-marquee-fast hover:[animation-play-state:paused]">
+          {Array.from({ length: 2 }).map((_, groupIdx) => (
+            <div key={`providers-group-${groupIdx}`} className="flex shrink-0 items-center gap-4 px-4">
+              {providers.map((provider, idx) => (
+                <div 
+                  key={`prov-${groupIdx}-${idx}`} 
+                  className="flex items-center gap-3 px-6 py-4 bg-white dark:bg-[#0a3124] border border-gray-200 dark:border-white/10 rounded-full shadow-sm whitespace-nowrap transition-colors hover:border-gray-300 dark:hover:border-white/20"
+                >
+                  <div className={`p-2 rounded-full ${provider.bg} ${provider.color}`}>
+                    {renderProviderIcon(provider)}
+                  </div>
+                  <span className="font-bold text-slate-700 dark:text-gray-200">{provider.name}</span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
 
         {/* Faixa 2: Extensões de Domínio (Marquee Slow - invertendo a direção com flex-row-reverse) */}
-        <div className="flex w-max animate-marquee-slow hover:[animation-play-state:paused] items-center gap-4 px-4 ml-[-200px]">
-          {duplicatedDomains.map((domain, idx) => {
-            const Icon = domain.icon;
-            return (
-              <div 
-                key={`dom-${idx}`} 
-                className="flex items-center gap-4 p-4 pr-6 bg-white dark:bg-[#0a3124] border border-gray-200 dark:border-white/10 rounded-2xl shadow-sm w-[350px] shrink-0 transition-colors hover:border-gray-300 dark:hover:border-white/20"
-              >
-                <div className="p-3 bg-brandDark/10 dark:bg-brand/10 text-brandDark dark:text-brand rounded-xl shrink-0">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div className="flex flex-col overflow-hidden">
-                  <span className="font-bold text-slate-900 dark:text-white text-lg">{domain.ext}</span>
-                  <span className="text-xs text-slate-500 dark:text-gray-400 leading-snug line-clamp-2 mt-0.5">{domain.desc}</span>
-                </div>
-              </div>
-            );
-          })}
+        <div className="flex w-max animate-marquee-slow hover:[animation-play-state:paused] ml-[-200px]">
+          {Array.from({ length: 2 }).map((_, groupIdx) => (
+            <div key={`domains-group-${groupIdx}`} className="flex shrink-0 items-center gap-4 px-4">
+              {domains.map((domain, idx) => {
+                const Icon = domain.icon;
+                return (
+                  <div 
+                    key={`dom-${groupIdx}-${idx}`} 
+                    className="flex items-center gap-4 p-4 pr-6 bg-white dark:bg-[#0a3124] border border-gray-200 dark:border-white/10 rounded-2xl shadow-sm w-[350px] shrink-0 transition-colors hover:border-gray-300 dark:hover:border-white/20"
+                  >
+                    <div className="p-3 bg-brandDark/10 dark:bg-brand/10 text-brandDark dark:text-brand rounded-xl shrink-0">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex flex-col overflow-hidden">
+                      <span className="font-bold text-slate-900 dark:text-white text-lg">{domain.ext}</span>
+                      <span className="text-xs text-slate-500 dark:text-gray-400 leading-snug line-clamp-2 mt-0.5">{domain.desc}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

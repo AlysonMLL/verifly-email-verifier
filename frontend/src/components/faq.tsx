@@ -9,6 +9,7 @@ uma navegação fluida pelo teclado e leitura perfeita por screen readers sem de
 */
 
 import { ChevronDown } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const faqs = [
   {
@@ -34,8 +35,14 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section id="faq" className="w-full py-16 px-4 md:px-8 max-w-3xl mx-auto scroll-mt-24">
+    <section
+      ref={ref}
+      id="faq"
+      className={`w-full py-16 px-4 md:px-8 max-w-3xl mx-auto scroll-mt-24 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+    >
       <div className="text-center mb-10">
         <p className="text-brandDark dark:text-brand text-sm font-bold tracking-widest uppercase mb-2">
           AINDA COM DÚVIDAS?

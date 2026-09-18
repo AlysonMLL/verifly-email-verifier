@@ -8,7 +8,7 @@ da proposta de valor da ferramenta e cria âncoras úteis para facilitar a naveg
 telas longas.
 */
 
-import { CheckCircle } from 'lucide-react';
+import logo from '../assets/logo-verifly.png';
 
 export default function Footer() {
   return (
@@ -18,15 +18,10 @@ export default function Footer() {
         {/* Branding & Info */}
         <div className="flex flex-col gap-4 max-w-sm">
           <div className="flex items-center gap-3">
-            <div className="bg-brand p-1.5 rounded-lg text-darkBg shadow-sm">
-              <CheckCircle className="w-5 h-5" strokeWidth={2.5} />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-              Veri<span className="text-brandDark dark:text-brand">fly</span>
-            </span>
+            <img src={logo} alt="Logo" className="h-16 w-auto transition-all" />
           </div>
           <p className="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">
-            Verificação de e-mail gratuita, rápida e sem cadastro.
+            2026 © Verifly. Todos os direitos reservados.
           </p>
         </div>
 

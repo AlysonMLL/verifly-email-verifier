@@ -23,7 +23,7 @@ function App() {
       <div className="min-h-screen bg-slate-50 dark:bg-transparent flex flex-col font-sans overflow-x-hidden">
         <Header />
         
-        <main className="flex-grow flex flex-col items-center">
+        <main className="flex-grow flex flex-col items-center pt-28">
           <Hero />
           <Marquee />
           

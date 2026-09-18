@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Clipboard, ShieldCheck } from 'lucide-react';
+import { Clipboard, ShieldCheck, UserRoundX, Zap, CheckCheck, BadgePercent } from 'lucide-react';
 
 export default function Hero() {
   const [email, setEmail] = useState('');
@@ -30,7 +30,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center pt-20 pb-16 px-4 text-center">
+    <section 
+      id="hero"
+      className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center pt-20 pb-16 px-4 text-center">
       
       {/* Badge Superior */}
       <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-brandDark/30 bg-white dark:bg-[#0a3124] text-brandDark dark:text-brand text-sm font-medium mb-6">
@@ -97,9 +99,18 @@ export default function Hero() {
 
       {/* Badges de Benefícios */}
       <div className="flex flex-wrap justify-center gap-3">
-        {['Sem necessidade de cadastro', 'Resultado em segundos', 'Verificação de sintaxe e domínio', '100% gratuito'].map((badge) => (
-          <span key={badge} className="px-4 py-1.5 rounded-full text-xs font-medium bg-gray-200 dark:bg-white/5 text-slate-600 dark:text-gray-400 border border-gray-300 dark:border-white/10">
-            {badge}
+        {[
+          { label: 'Sem necessidade de cadastro', icon: UserRoundX },
+          { label: 'Resultado em segundos', icon: Zap },
+          { label: 'Verificação de sintaxe e domínio', icon: CheckCheck },
+          { label: '100% gratuito', icon: BadgePercent },
+        ].map(({ label, icon: Icon }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-gray-200 dark:bg-white/5 text-slate-600 dark:text-gray-400 border border-gray-300 dark:border-white/10"
+          >
+            <Icon className="w-3.5 h-3.5" />
+            {label}
           </span>
         ))}
       </div>
