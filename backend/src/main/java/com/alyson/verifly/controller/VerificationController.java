@@ -1,15 +1,16 @@
 package com.alyson.verifly.controller;
 
 /* O que há aqui:
-- Injeção de Dependência (DI) dos 4 serviços de validação (Sintaxe, Descartável, Domínio e Tipografia).
+- Injeção de Dependência (DI) dos serviços unitários e do serviço de lote (Batch).
 - Endpoint POST /api/v1/verify com fluxo de curto-circuito (Fail-fast).
+- Endpoint POST /api/v1/verify/batch para upload e processamento de arquivos CSV.
 
-Função do arquivo: Atuar como o maestro da operação.
-A lógica aplica o padrão "Fail-fast": se a sintaxe falhar, devolve erro imediatamente, 
-poupando CPU. Se for descartável, recusa sem gastar rede. Se passar, consulta o DNS
-e, em caso de erro, sugere correção ortográfica.
+Função do arquivo: Atuar como o maestro da operação da API.
+Ele gerencia as requisições HTTP individuais e em massa, repassando os dados 
+para a camada de negócio e envelopando as respostas com os Status Codes RESTful corretos.
 */
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
@@ -18,10 +19,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.alyson.verifly.dto.BatchResultRow;
 import com.alyson.verifly.dto.VerificationRequest;
 import com.alyson.verifly.dto.VerificationResult;
+import com.alyson.verifly.service.BatchVerificationService;
 import com.alyson.verifly.service.DisposableEmailService;
 import com.alyson.verifly.service.DomainValidationService;
 import com.alyson.verifly.service.SyntaxValidationService;
@@ -37,15 +42,18 @@ public class VerificationController {
     private final DisposableEmailService disposableService;
     private final DomainValidationService domainService;
     private final TypoSuggestionService typoService;
+    private final BatchVerificationService batchService;
 
     public VerificationController(SyntaxValidationService syntaxService,
                                   DisposableEmailService disposableService,
                                   DomainValidationService domainService,
-                                  TypoSuggestionService typoService) {
+                                  TypoSuggestionService typoService,
+                                  BatchVerificationService batchService) {
         this.syntaxService = syntaxService;
         this.disposableService = disposableService;
         this.domainService = domainService;
         this.typoService = typoService;
+        this.batchService = batchService;
     }
 
     @GetMapping("/health")
@@ -57,34 +65,45 @@ public class VerificationController {
     public ResponseEntity<VerificationResult> verifyEmail(@Valid @RequestBody VerificationRequest request) {
         String email = syntaxService.normalizeEmail(request.email());
 
-        // 1. Barreira Síncrona: Regex RFC
         if (!syntaxService.isValidSyntax(email)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new VerificationResult(
                     false, "INVALID_SYNTAX", "Formato de e-mail inválido.", null
             ));
         }
 
-        // 2. Barreira Síncrona: E-mails Temporários
         if (disposableService.isDisposable(email)) {
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(new VerificationResult(
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).body(new VerificationResult(
                     false, "DISPOSABLE", "Domínios de e-mail temporários não são permitidos.", null
             ));
         }
 
-        // Extrai o domínio para a próxima fase
         String domain = email.substring(email.indexOf("@") + 1);
 
-        // 3. Barreira I/O Externa: MX Lookup DNS (Caffeine Cacheado)
         if (!domainService.hasMxRecords(domain)) {
             String suggestion = typoService.suggestCorrection(email);
-            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(new VerificationResult(
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).body(new VerificationResult(
                     false, "INVALID_DOMAIN", "O domínio não possui servidores de e-mail ativos.", suggestion
             ));
         }
 
-        // Sucesso total
         return ResponseEntity.ok(new VerificationResult(
-            true, "VALID", "E-mail verificado com sucesso.", null
+                true, "VALID", "E-mail verificado com sucesso.", null
         ));
+    }
+
+    @PostMapping("/verify/batch")
+    public ResponseEntity<?> verifyBatch(@RequestParam("file") MultipartFile file) {
+        if (file.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", "O arquivo CSV não pode estar vazio."));
+        }
+
+        try {
+            List<BatchResultRow> results = batchService.processBatch(file);
+            return ResponseEntity.ok(results);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Falha ao processar o arquivo CSV. Verifique a formatação."));
+        }
     }
 }

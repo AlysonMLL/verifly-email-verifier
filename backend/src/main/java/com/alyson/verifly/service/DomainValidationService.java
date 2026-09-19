@@ -23,16 +23,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class DomainValidationService {
 
-    private String normalizeDomain(String domain) {
-        if (domain == null) {
-            return "";
-        }
-        return domain.trim().toLowerCase();
-    }
-
-    @Cacheable(value = "domain-mx-cache", key = "#root.target.normalizeDomain(#domain)")
+    @Cacheable(value = "domain-mx-cache", key = "#domain.trim().toLowerCase()")
     public boolean hasMxRecords(String domain) {
-        String normalizedDomain = normalizeDomain(domain);
+        String normalizedDomain = domain.trim().toLowerCase();
+        
         if (normalizedDomain.isBlank()) {
             return false;
         }
