@@ -15,9 +15,10 @@ export default function Header() {
   const links = [
     { name: 'Início', href: '#hero' },
     // { name: 'Compatibilidade', href: '#compatibilidade' },
+    { name: 'Verificação em Lote', href: '#batch' },
     { name: 'Recursos', href: '#recursos' },
     { name: 'Dúvidas', href: '#faq' },
-    { name: 'Verificação em Lote', href: '#batch' }
+    
   ];
 
   return (

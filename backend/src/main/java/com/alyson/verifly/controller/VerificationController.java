@@ -109,5 +109,7 @@ public class VerificationController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Falha ao processar o arquivo CSV. Verifique a formatação."));
         }
+
+        
     }
 }

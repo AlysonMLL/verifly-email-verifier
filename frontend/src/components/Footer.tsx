@@ -9,6 +9,7 @@ telas longas.
 */
 
 import logo from '../assets/logo-verifly.png';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -25,17 +26,33 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        <div className="flex flex-wrap gap-6 text-sm font-medium">
-          {['Como funciona', 'Dúvidas frequentes', 'Privacidade', 'Contato'].map((link) => (
-            <a 
-              key={link} 
-              href={link === 'Dúvidas frequentes' ? '#faq' : '#'} 
-              className="text-slate-600 dark:text-gray-400 hover:text-brandDark dark:hover:text-brand transition-colors"
+        {/* Contact links */}
+        <div className="flex flex-col gap-4 border-l-2 border-brand/50 pl-5 md:items-end md:pl-8">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-gray-300">
+            Contato
+          </span>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/AlysonMLL"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              className="group flex h-11 w-11 items-center justify-center rounded-lg border border-slate-300/70 text-slate-600 transition-all hover:-translate-y-0.5 hover:border-brand hover:bg-brand/10 hover:text-brandDark focus:outline-none focus:ring-2 focus:ring-brand/60 dark:border-white/10 dark:text-gray-300 dark:hover:text-brand"
             >
-              {link}
+              <FaGithub aria-hidden="true" className="h-5 w-5 transition-transform group-hover:scale-110" />
             </a>
-          ))}
+            <a
+              href="https://www.linkedin.com/in/alysonmll/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="group flex h-11 w-11 items-center justify-center rounded-lg border border-slate-300/70 text-slate-600 transition-all hover:-translate-y-0.5 hover:border-brand hover:bg-brand/10 hover:text-brandDark focus:outline-none focus:ring-2 focus:ring-brand/60 dark:border-white/10 dark:text-gray-300 dark:hover:text-brand"
+            >
+              <FaLinkedin aria-hidden="true" className="h-5 w-5 transition-transform group-hover:scale-110" />
+            </a>
+          </div>
         </div>
         
       </div>

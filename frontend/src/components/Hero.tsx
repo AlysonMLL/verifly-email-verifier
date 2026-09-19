@@ -66,7 +66,7 @@ export default function Hero() {
       </div>
 
       <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
-        Verificador de email <span className="text-brandDark dark:text-brand italic">gratuito</span>
+        Verificador de domínio <span className="text-brandDark dark:text-brand italic">gratuito</span>
       </h1>
       <p className="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mb-12">
         Confirme em segundos se um endereço de e-mail é válido, existe de fato e está pronto para receber mensagens — sem criar conta e sem pagar nada.
