@@ -14,6 +14,7 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Features from './components/Features';
 import Benefits from './components/Benefits';
+import BatchUpload from './components/BatchUpload';
 import FAQ from './components/faq';
 import Footer from './components/Footer';
 
@@ -25,11 +26,16 @@ function App() {
         
         <main className="flex-grow flex flex-col items-center pt-28">
           <Hero />
-          <Marquee />
+          <div className="w-full bg-slate-200 dark:bg-transparent pt-10 pb-10">
+            <Marquee />
+          </div>
           
           <div className="w-full bg-slate-50 dark:bg-transparent pt-10 pb-10">
+            {/* O novo componente Batch injetado aqui */}
+            <BatchUpload />
             <Features />
             <Benefits />
+            
           </div>
           
           <FAQ />

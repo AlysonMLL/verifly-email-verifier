@@ -1,12 +1,23 @@
 import ThemeToggle from './ThemeToggle';
-import logo from '../assets/logo-verifly.png';
+import logo_dark from '../assets/logo-verifly.png';
+// import logo_light from '../assets/logo-verifly-lightmode.png';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const logo = mounted && theme === 'light' ? logo_dark : logo_dark; // Usar quando a logo light estiver pronta: logo_light : logo_dark;
+
   const links = [
     { name: 'Início', href: '#hero' },
-    { name: 'Compatibilidade', href: '#compatibilidade' },
+    // { name: 'Compatibilidade', href: '#compatibilidade' },
     { name: 'Recursos', href: '#recursos' },
-    { name: 'Dúvidas', href: '#faq' }
+    { name: 'Dúvidas', href: '#faq' },
+    { name: 'Verificação em Lote', href: '#batch' }
   ];
 
   return (

@@ -77,17 +77,21 @@ public class VerificationController {
             ));
         }
 
+        // Extrai o domínio e já calcula a sugestão imediatamente
         String domain = email.substring(email.indexOf("@") + 1);
+        String suggestion = typoService.suggestCorrection(email);
 
+        // 3. Barreira I/O Externa: MX Lookup DNS (Caffeine Cacheado)
         if (!domainService.hasMxRecords(domain)) {
-            String suggestion = typoService.suggestCorrection(email);
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).body(new VerificationResult(
                     false, "INVALID_DOMAIN", "O domínio não possui servidores de e-mail ativos.", suggestion
             ));
         }
 
+        // Sucesso total. Se o domínio tinha servidor (ex: gmil.com) mas a IA detectou typo, 
+        // a sugestão irá anexada para o React alertar o usuário ("Você quis dizer...?").
         return ResponseEntity.ok(new VerificationResult(
-                true, "VALID", "E-mail verificado com sucesso.", null
+            true, "VALID", "E-mail verificado com sucesso.", suggestion
         ));
     }
 

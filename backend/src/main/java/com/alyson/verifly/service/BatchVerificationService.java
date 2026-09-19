@@ -62,7 +62,7 @@ public class BatchVerificationService {
                 // Previne falha se houver uma linha apenas com vírgulas vazias
                 if (csvRecord.size() == 0) continue;
 
-                // Assumimos que o e-mail está na primeira coluna
+                // Assume que o e-mail está na primeira coluna
                 String rawEmail = csvRecord.get(0);
                 String email = syntaxService.normalizeEmail(rawEmail);
 
