@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="330" height="150" alt="logo-verifly" src="https://github.com/user-attachments/assets/d9a506d3-b740-40ef-818d-242359969829" />
+  <img width="270" height="120" alt="logo-verifly" src="https://github.com/user-attachments/assets/d9a506d3-b740-40ef-818d-242359969829" />
 </p>
 
 # 🔍 Verifly | Verificador de E-mails em Tempo Real
@@ -8,7 +8,9 @@ Um verificador de e-mails de alta precisão, desenvolvido para validar não só 
 
 <br>
 
-Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app)
+Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (Talvez seja necessário aguardar alguns segundos até a build ser concluída)
+
+<br>
 
 <p align="center">
 
@@ -38,11 +40,11 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app)
 <p align="center">
 
 
-<img width="210" height="70" alt="Vercel-white" src="https://github.com/user-attachments/assets/227e13aa-c305-4671-9e92-62ef8a2b333b" />
+<img width="200" height="70" alt="Vercel-white" src="https://github.com/user-attachments/assets/227e13aa-c305-4671-9e92-62ef8a2b333b" />
 
-<img width="250" height="70" alt="render" src="https://github.com/user-attachments/assets/f6a1e874-971f-4428-857b-83fa7edf56a1" />
+<img width="240" height="70" alt="render" src="https://github.com/user-attachments/assets/f6a1e874-971f-4428-857b-83fa7edf56a1" />
 
-<img width="190" height="70" alt="docker2-svgrepo" src="https://github.com/user-attachments/assets/9e254935-1396-4695-9726-4d50513305e9" />
+<img width="180" height="70" alt="docker2-svgrepo" src="https://github.com/user-attachments/assets/9e254935-1396-4695-9726-4d50513305e9" />
 
 <img width="180" height="70" alt="postman2-svgrepo" src="https://github.com/user-attachments/assets/330b59bc-b20f-4100-a47c-c1d06c2b2b63" />
 
@@ -50,19 +52,19 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app)
 
 <br>
 
-<img width="1100" height="500" alt="verifly-screenshot-hero" src="" />
+<img width="1000" height="550" alt="verifly_gif_1" src="https://github.com/user-attachments/assets/62d17d42-1d48-4cd2-98e7-b11ed1ef5403" />
 
 ---
 
 Diferente de um simples validador de regex, o Verifly atua em três camadas de verificação — sintaxe, existência real do domínio (consulta nativa a registros MX) e reputação (detecção de provedores de e-mail descartável) — com resposta em milissegundos graças a um cache em memória.
 
-<img width="1100" height="500" alt="verifly-screenshot-lote" src="" />
+<img width="1000" height="550" alt="verifly_gif_2" src="https://github.com/user-attachments/assets/ee44e758-befd-45dc-b27b-a43fa53131f1" />
 
 ---
 
 Com suporte nativo a Dark e Light Mode e animações suaves de rolagem, a interface foi pensada para transmitir a mesma confiança de uma ferramenta paga, mesmo sendo gratuita e sem necessidade de conta.
 
-<img width="1100" height="500" alt="verifly-screenshot-theme" src="" />
+<img width="1000" height="550" alt="verifly_3" src="https://github.com/user-attachments/assets/de10584d-dacb-4986-ab4a-fd3ef676aec5" />
 
 <br>
 
@@ -134,6 +136,9 @@ Acesse **http://localhost:5173** para visualizar a interface.
 
 > Configure a variável `VITE_API_URL` no frontend (arquivo `.env`) apontando para `http://localhost:8080/api/v1` durante o desenvolvimento local.
 
+<br>
+
+---
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
