@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="400" height="175" alt="logo-verifly" src="https://github.com/user-attachments/assets/d9a506d3-b740-40ef-818d-242359969829" />
+  <img width="330" height="150" alt="logo-verifly" src="https://github.com/user-attachments/assets/d9a506d3-b740-40ef-818d-242359969829" />
 </p>
 
 # 🔍 Verifly | Verificador de E-mails em Tempo Real
@@ -11,18 +11,44 @@ Um verificador de e-mails de alta precisão, desenvolvido para validar não só 
 Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
-  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+
+<img width="70" height="70" alt="java-svgrepo" src="https://github.com/user-attachments/assets/28299d70-1bc0-4ed4-9e71-37549f4815d0" />
+
+<img width="70" height="70" alt="spring-boot-svgrepo" src="https://github.com/user-attachments/assets/d4caea1e-8869-4e3e-b284-b5a737c7968b" />
+
+<img width="70" height="70" alt="maven-svgrepo-com" src="https://github.com/user-attachments/assets/cf62bb0f-ceff-4455-abf2-4e38b4ce0b16" />
+
+<!-- <img width="220" height="70" alt="react" src="https://github.com/user-attachments/assets/3a5b2fe2-88c2-4be6-b9ad-f03589d7aa5b" /> -->
+
+<img width="70" height="70" alt="react-svgrepo-com" src="https://github.com/user-attachments/assets/0b68a090-6fb3-4c0d-83f9-24ae039e6b03" />
+
+<img width="70" height="70" alt="vite-svgrepo" src="https://github.com/user-attachments/assets/d01e574b-03ef-4067-bd41-d7d64d73f587" />
+
+<img width="70" height="70" alt="typescript-official-svgrepo-com" src="https://github.com/user-attachments/assets/db85ab32-6811-45af-87a6-3d19d3b27591" />
+
+<img width="70" height="70" alt="html-5-svgrepo-com" src="https://github.com/user-attachments/assets/61350760-93f0-4240-9cb6-f9e79d04774c" />
+
+<img width="70" height="70" alt="css-3-svgrepo-com" src="https://github.com/user-attachments/assets/eca10606-61ea-40db-965f-991563f41871" />
+
+<img width="230" height="70" alt="tailwindcss2-svgrepo" src="https://github.com/user-attachments/assets/222bb634-a695-4dcd-8990-f3675147d795" />
+
+
 </p>
+
+<p align="center">
+
+
+<img width="210" height="70" alt="Vercel-white" src="https://github.com/user-attachments/assets/227e13aa-c305-4671-9e92-62ef8a2b333b" />
+
+<img width="250" height="70" alt="render" src="https://github.com/user-attachments/assets/f6a1e874-971f-4428-857b-83fa7edf56a1" />
+
+<img width="190" height="70" alt="docker2-svgrepo" src="https://github.com/user-attachments/assets/9e254935-1396-4695-9726-4d50513305e9" />
+
+<img width="180" height="70" alt="postman2-svgrepo" src="https://github.com/user-attachments/assets/330b59bc-b20f-4100-a47c-c1d06c2b2b63" />
+
+</p>
+
+<br>
 
 <img width="1100" height="500" alt="verifly-screenshot-hero" src="" />
 
@@ -83,6 +109,7 @@ O Verifly está em produção, com backend e frontend hospedados separadamente, 
 
 <br>
 
+
 # ⚙️ Como Executar o Projeto Localmente
 
 ### **Backend**
@@ -106,3 +133,18 @@ npm run dev
 Acesse **http://localhost:5173** para visualizar a interface.
 
 > Configure a variável `VITE_API_URL` no frontend (arquivo `.env`) apontando para `http://localhost:8080/api/v1` durante o desenvolvimento local.
+
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
+  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+</p>
