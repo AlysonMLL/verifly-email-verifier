@@ -52,19 +52,19 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (Talvez sej
 
 <br>
 
-<img width="1000" height="550" alt="verifly_gif_1" src="https://github.com/user-attachments/assets/62d17d42-1d48-4cd2-98e7-b11ed1ef5403" />
+<img width="1000" height="450" alt="verifly_gif_1" src="https://github.com/user-attachments/assets/62d17d42-1d48-4cd2-98e7-b11ed1ef5403" />
 
 ---
 
 Diferente de um simples validador de regex, o Verifly atua em três camadas de verificação — sintaxe, existência real do domínio (consulta nativa a registros MX) e reputação (detecção de provedores de e-mail descartável) — com resposta em milissegundos graças a um cache em memória.
 
-<img width="1000" height="550" alt="verifly_gif_2" src="https://github.com/user-attachments/assets/ee44e758-befd-45dc-b27b-a43fa53131f1" />
+<img width="1000" height="450" alt="verifly_gif_2" src="https://github.com/user-attachments/assets/ee44e758-befd-45dc-b27b-a43fa53131f1" />
 
 ---
 
 Com suporte nativo a Dark e Light Mode e animações suaves de rolagem, a interface foi pensada para transmitir a mesma confiança de uma ferramenta paga, mesmo sendo gratuita e sem necessidade de conta.
 
-<img width="1000" height="550" alt="verifly_3" src="https://github.com/user-attachments/assets/de10584d-dacb-4986-ab4a-fd3ef676aec5" />
+<img width="1000" height="450" alt="verifly_3" src="https://github.com/user-attachments/assets/de10584d-dacb-4986-ab4a-fd3ef676aec5" />
 
 <br>
 
