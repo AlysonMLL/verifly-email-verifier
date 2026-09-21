@@ -8,10 +8,23 @@ da proposta de valor da ferramenta e cria âncoras úteis para facilitar a naveg
 telas longas.
 */
 
-import logo from '../assets/logo-verifly.png';
+import logo_dark from '../assets/logo-verifly.png';
+import logo_light from '../assets/logo-verifly-lightmode.png';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
+
 
 export default function Footer() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const logo = mounted && theme === 'light' ? logo_light : logo_dark;
+
+
   return (
     <footer className="w-full border-t border-gray-200 dark:border-white/5 bg-transparent mt-10">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
@@ -19,7 +32,7 @@ export default function Footer() {
         {/* Branding & Info */}
         <div className="flex flex-col gap-4 max-w-sm">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="h-16 w-auto transition-all" />
+            <img src={logo} alt="Logo" className="h-12 w-auto transition-all" />
           </div>
           <p className="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">
             2026 © Verifly. Todos os direitos reservados.

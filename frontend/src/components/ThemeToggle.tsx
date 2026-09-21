@@ -1,3 +1,13 @@
+/* O que há aqui:
+- Integração com o hook useTheme, do next-themes, para acessar e alterar o tema atual.
+- Estado de montagem para evitar inconsistências entre a renderização do servidor e do cliente.
+- Botão com ícones de sol e lua para representar visualmente o tema selecionado.
+- Estilos responsivos para borda, hover e adaptação aos temas claro e escuro.
+
+Função do arquivo: Renderizar o botão de alternância de tema da aplicação.
+Ele permite que o usuário alterne entre os modos claro e escuro de forma acessível e consistente.
+*/
+
 import { useTheme } from 'next-themes';
 import { Sun, Moon } from 'lucide-react';
 import { useEffect, useState } from 'react';

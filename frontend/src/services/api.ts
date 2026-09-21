@@ -1,3 +1,13 @@
+/* O que há aqui:
+- URL base da API definida por variável de ambiente, com fallback para o backend local.
+- Método para verificar um único endereço de e-mail via requisição POST.
+- Método para enviar um arquivo e obter os resultados da verificação em lote.
+- Tratamento de erros internos do servidor e conversão das respostas para os tipos da aplicação.
+
+Função do arquivo: Centralizar a comunicação do frontend com a API de verificação de e-mails.
+Ele mantém as chamadas HTTP e seus formatos de resposta organizados em uma única interface reutilizável.
+*/
+
 import type { VerificationResult, BatchResultRow } from '../types/index.ts';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1';
