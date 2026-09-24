@@ -8,11 +8,15 @@ Um verificador de e-mails de alta precisão, desenvolvido para validar não só 
 
 <br>
 
-Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (Talvez seja necessário aguardar alguns segundos até a build ser concluída)
+Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (talvez seja necessário aguardar alguns segundos até a build ser concluída)
 
 <br>
 
 <p align="center">
+
+<img width="70" height="70" alt="vs-code-svgrepo-com" src="https://github.com/user-attachments/assets/e0c4ae56-abce-489c-8906-1837141898b5" />
+
+<img width="70" height="70" alt="intellij-idea-svgrepo" src="https://github.com/user-attachments/assets/62ab4e68-f1cf-4378-a6e8-f57a60bf01eb" />
 
 <img width="70" height="70" alt="java-svgrepo" src="https://github.com/user-attachments/assets/28299d70-1bc0-4ed4-9e71-37549f4815d0" />
 
@@ -52,19 +56,19 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (Talvez sej
 
 <br>
 
-<img width="1000" height="450" alt="verifly_gif_1" src="https://github.com/user-attachments/assets/62d17d42-1d48-4cd2-98e7-b11ed1ef5403" />
+<img width="1000" height="500" alt="verifly_gif_1" src="https://github.com/user-attachments/assets/62d17d42-1d48-4cd2-98e7-b11ed1ef5403" />
 
 ---
 
 Diferente de um simples validador de regex, o Verifly atua em três camadas de verificação — sintaxe, existência real do domínio (consulta nativa a registros MX) e reputação (detecção de provedores de e-mail descartável) — com resposta em milissegundos graças a um cache em memória.
 
-<img width="1000" height="450" alt="verifly_gif_2" src="https://github.com/user-attachments/assets/ee44e758-befd-45dc-b27b-a43fa53131f1" />
+<img width="1000" height="500" alt="verifly_gif_2" src="https://github.com/user-attachments/assets/ee44e758-befd-45dc-b27b-a43fa53131f1" />
 
 ---
 
 Com suporte nativo a Dark e Light Mode e animações suaves de rolagem, a interface foi pensada para transmitir a mesma confiança de uma ferramenta paga, mesmo sendo gratuita e sem necessidade de conta.
 
-<img width="1000" height="450" alt="verifly_3" src="https://github.com/user-attachments/assets/de10584d-dacb-4986-ab4a-fd3ef676aec5" />
+<img width="1000" height="500" alt="verifly_3" src="https://github.com/user-attachments/assets/de10584d-dacb-4986-ab4a-fd3ef676aec5" />
 
 <br>
 
@@ -140,6 +144,8 @@ Acesse **http://localhost:5173** para visualizar a interface.
 
 ---
 
+<br>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
@@ -147,9 +153,15 @@ Acesse **http://localhost:5173** para visualizar a interface.
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+  <img src="https://img.shields.io/badge/Intellij%20Idea-000?logo=intellij-idea&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
 </p>
