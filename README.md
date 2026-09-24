@@ -24,8 +24,6 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (talvez sej
 
 <img width="70" height="70" alt="maven-svgrepo-com" src="https://github.com/user-attachments/assets/cf62bb0f-ceff-4455-abf2-4e38b4ce0b16" />
 
-<!-- <img width="220" height="70" alt="react" src="https://github.com/user-attachments/assets/3a5b2fe2-88c2-4be6-b9ad-f03589d7aa5b" /> -->
-
 <img width="70" height="70" alt="react-svgrepo-com" src="https://github.com/user-attachments/assets/0b68a090-6fb3-4c0d-83f9-24ae039e6b03" />
 
 <img width="70" height="70" alt="vite-svgrepo" src="https://github.com/user-attachments/assets/d01e574b-03ef-4067-bd41-d7d64d73f587" />
@@ -36,13 +34,11 @@ Acesse o site em: [Verifly](https://veriflyemailverifier.vercel.app) (talvez sej
 
 <img width="70" height="70" alt="css-3-svgrepo-com" src="https://github.com/user-attachments/assets/eca10606-61ea-40db-965f-991563f41871" />
 
-<img width="230" height="70" alt="tailwindcss2-svgrepo" src="https://github.com/user-attachments/assets/222bb634-a695-4dcd-8990-f3675147d795" />
-
+<img width="70" height="70" alt="tailwind" src="https://github.com/user-attachments/assets/03e06416-020d-420c-a969-33fc6c65ade4" />
 
 </p>
 
 <p align="center">
-
 
 <img width="200" height="70" alt="Vercel-white" src="https://github.com/user-attachments/assets/227e13aa-c305-4671-9e92-62ef8a2b333b" />
 
